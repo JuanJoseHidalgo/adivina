@@ -1,3 +1,4 @@
+import java.io.File
 // Códigos de color de fondo
 const val BG_BLACK = "\u001B[40m"
 const val BG_RED = "\u001B[41m"
@@ -22,20 +23,85 @@ const val UNDERLINE = "\u001B[4m"
 
 //Función que devolve un enteiro aleatorio de 1 a 6
 fun alea6(): Int {
-    val cifra = 1..6
-    var aleatorio=cifra.random()
+        val cifra = 1..6
+        var aleatorio = cifra.random()
     return aleatorio
 }
 
 fun main() {
 
-    for (vez in 1..4){
-        print ("$BLUE")
-        println (alea6())
+    println("$GREEN")
+    println("1. Jugar")
+    println("2. Ver traza do último intento")
+    println("3. Sair")
+    print("opción: ")
+
+    var opcion=readln().toInt()
+
+    val file= File("oMeuFicheiro.txt")
+    var numeroSegredo= arrayOf(0,0,0,0)
+    var numeroBusacado= arrayOf(0,0,0,0)
+    var segredo=""
+    var numero="0000"
+    var exactos=0
+    var coincidencias=0
+
+    when (opcion) {
+        1 -> {
+            numeroSegredo[0]=alea6()
+            numeroSegredo[1] = alea6()
+            while (numeroSegredo[0] == numeroSegredo[1]) numeroSegredo[1] = alea6()
+            numeroSegredo[2] = alea6()
+            while (numeroSegredo[2] == numeroSegredo[1] || numeroSegredo[2] == numeroSegredo [0]) numeroSegredo[2] = alea6()
+            numeroSegredo[3] = alea6()
+            while (numeroSegredo[3] == numeroSegredo[2] || numeroSegredo[3] == numeroSegredo[1] || numeroSegredo[3] == numeroSegredo [0]) numeroSegredo[3] = alea6()
+
+            print("$BLUE")
+
+            for (i in 0..3) {
+                segredo=segredo+numeroSegredo[i]
+            }
+
+            File("oMeuFicheiro.txt").writeText("Numero segredo=$segredo\n")
+
+            for (intento in 1..10){
+            print("${BLUE}Teclea un número de 4 dixitos (do 1 ao 6) sen números repetidos: ")
+                numero=readln()
+                exactos=0
+                coincidencias=0
+
+                for (posicion in 0..3) {
+                    if (numeroSegredo[posicion].toString()==numero[posicion].toString()) exactos++
+                }
+                for (posicion in 0..3) {
+                    for (busqueda in 0..3){
+                        if ((numeroSegredo[posicion].toString()==numero[busqueda].toString()) && (numeroSegredo[posicion].toString()!=numero[posicion].toString())) coincidencias++
+                    }
+                }
+
+                println("${WHITE}Intento$intento: $numero $BG_GREEN${BLACK} $exactos ${RESET}$BG_YELLOW${BLACK} $coincidencias ${RESET}")
+                val file = File("OMeuFicheiro.txt").appendText("Intento$intento: $numero Exactos:$exactos Coincidencias:$coincidencias \n")
+                if (exactos==4) {
+                    println("${BG_CYAN}CONSEGUIDO!! Noraboa!$RESET")
+                    break
+                }
+                }
+
+
+
+        }
+        2-> {
+            if (file.exists()) {
+                val contido=File("oMeuFicheiro.txt").readText()
+                println(contido)
+            }
+            else
+            {
+                println("Xoga unha partida para usar esta opción")
+            }
+        }
+        3-> {
+            println("Grazas por xogar")
+        }
     }
-
-    println()
-    val aleatorio=alea6()
-    println("$GREEN$aleatorio")
-
 }
