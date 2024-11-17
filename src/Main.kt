@@ -31,7 +31,7 @@ fun alea6(): Int {
 fun main() {
 
     println("$GREEN")
-    println("1. Jugar")
+    println("1. Xogar")
     println("2. Ver traza do último intento")
     println("3. Sair")
     print("opción: ")

@@ -1,0 +1,5 @@
+Numero segredo=3465
+Intento1: 2345 Exactos:1 Coincidencias:2 
+Intento2: 1435 Exactos:2 Coincidencias:1 
+Intento3: 1436 Exactos:1 Coincidencias:2 
+Intento4: 1425 Exactos:2 Coincidencias:0 

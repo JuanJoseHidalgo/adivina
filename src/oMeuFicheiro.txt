@@ -1,0 +1,11 @@
+Numero segredo=1356
+Intento1: 1234 Exactos:1 Coincidencias:1 
+Intento2: 3456 Exactos:2 Coincidencias:1 
+Intento3: 1234 Exactos:1 Coincidencias:1 
+Intento4: 2311 Exactos:1 Coincidencias:2 
+Intento5: 3333 Exactos:1 Coincidencias:0 
+Intento6: 3333 Exactos:1 Coincidencias:0 
+Intento7: 3333 Exactos:1 Coincidencias:0 
+Intento8: 3333 Exactos:1 Coincidencias:0 
+Intento9: 3333 Exactos:1 Coincidencias:0 
+Intento10: 3333 Exactos:1 Coincidencias:0 

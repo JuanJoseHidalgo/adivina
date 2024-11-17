@@ -1,0 +1,11 @@
+D:\PROGRAMACION\Kotlin\Adivina\src>kotlinc MainKt -include-runtime -d MainKt.jar
+error: source file or directory not found: MainKt
+
+D:\PROGRAMACION\Kotlin\Adivina\src>kotlinc Main.kt -include-runtime -d Adivina.jar
+
+D:\PROGRAMACION\Kotlin\Adivina\src>java jar Adivina.jar
+Error: no se ha encontrado o cargado la clase principal jar
+
+D:\PROGRAMACION\Kotlin\Adivina\src>kotlinc Main.kt -include-runtime -d MainKt.jar
+
+D:\PROGRAMACION\Kotlin\Adivina\src>java -jar MainKt.jar
