@@ -6,9 +6,10 @@ La aplicación genera internamente un número aleatorio y el usuario debe adivin
 
 Aunque la aplicación sea de consola puedes inspirarte en alguna app android como Guess My Number
 
-guessmynumberandroid.png
+![guessmynumberandroid.png](guessmynumberandroid.png)
 
-o bien en alguna versión web como Numberle
+o bien en alguna versión web como 
+[Numberle](https://kveez.com/en/numberle/#google_vignette)
 
 SE PIDE:
 
@@ -19,4 +20,4 @@ SE PIDE:
 
 Aquí tienes un ejemplo de ejecución. Puedes mejorar mucho esta presentación, pretende simplemente mostrar de forma sencilla la idea del juego.
 
-traza.png
+![traza.png](traza.png)
