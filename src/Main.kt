@@ -1,4 +1,5 @@
 import java.io.File
+
 // Códigos de color de fondo
 const val BG_BLACK = "\u001B[40m"
 const val BG_RED = "\u001B[41m"
